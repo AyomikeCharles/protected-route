@@ -13,8 +13,8 @@ export default function Admin(){
 	return(
 		<div className='dashboard'>
 			<div className='user-info'>
-				<h2>{user.username} dashbord</h2>
-				<h2>Role: {user.role}</h2>
+				<h2>{user.username} Dashbord</h2>
+				<h2>Role: {user.role.length>1?'Superadmin':user.role}</h2>
 				<img className='userimg' src={adminimg} alt=''/>
 			</div>
 		</div>
