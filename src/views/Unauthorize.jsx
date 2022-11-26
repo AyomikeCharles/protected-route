@@ -1,4 +1,4 @@
-import erpic from './../img/erpic.jpeg';
+import erpic from './../img/erpic.png';
 import { Link } from 'react-router-dom';
 
 export default function Unauthorize(){
@@ -7,16 +7,14 @@ export default function Unauthorize(){
 
 			<div className='write-up'>
 				<div>
-					<h1>Ooooops !</h1>
-					<h4>we cant seem to find the page you are looking for</h4>
-					<Link to='/'><button style={{color:'white'}} className='btn'>Back to home</button></Link>
-					<div className='circle2'></div>
-					<div className='circle1'></div>
-
+					<div className='img-holder'>
+						<img className='img404' src={erpic} alt='by storyset on Freepik'/>
+					</div>
+					<h3 style={{textAlign:'center'}}>we cant seem to find the page you are looking for</h3>
+					<div className='btns'>
+						<button className='btn'><Link to='/' style={{color:'white'}} >Back to home</Link></button>
+					</div>
 				</div>
-			</div>
-			<div className='img-holder'>
-				<img className='img404' src={erpic} alt='Image by storyset on Freepik'/>
 			</div>
 		</div>
 		)

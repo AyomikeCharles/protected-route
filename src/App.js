@@ -3,7 +3,6 @@ import './App.css'
 import Unauthorize from './views/Unauthorize';
 import Admin from './views/Admin';
 import Login from './views/login';
-import Nav from './views/Nav';
 import User from './views/User';
 import { Route, Routes } from 'react-router-dom';
 import ProtectedRoute from './protectedRoute/requireAuth'
@@ -11,7 +10,7 @@ import ProtectedRoute from './protectedRoute/requireAuth'
 function App() {
   return (
     <>
-      <Nav/>
+      
 
       <Routes>
         

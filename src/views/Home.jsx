@@ -1,4 +1,5 @@
 import homeimg from './../img/home.jpeg';
+import Nav from './Nav';
 import { Link, useNavigate } from 'react-router-dom';
 export default function Home(){
 	const navigate = useNavigate();
@@ -16,15 +17,21 @@ export default function Home(){
 	}
 	
 	return(
+		<>
+		<Nav/>
 		<div>
 			<div className='banner'>
+				<div className='banner-overlay'></div>
 				<div className='home-write-up'>
-					<h3>Role base authourization using react router dom outlet</h3>
-					<p>this project demostrate role base authourization using react router dom outlet. there are two dashboard (admin and user), guess only have access to homepage, user has access to only user dashboard, admin has access to only admin dashboard, while super admin has access to both user and admin dashboard. below are three login details</p>
-					{
-						user?<button onClick={logout} style={{color:'white'}} className='btn'>logout</button>:<Link to='/login'><button style={{color:'white'}} className='btn'>login</button></Link>
-					}
-					
+						<div>
+						<h3>Role base authourization using react router dom outlet</h3>
+						<p>this project demostrate role base authourization using react router dom outlet. there are two dashboard (admin and user), guess only have access to homepage, user has access to only user dashboard, admin has access to only admin dashboard, while super admin has access to both user and admin dashboard. below are three login details</p>
+						<div className='btns'>
+							{
+								user?<button onClick={logout} style={{color:'white'}} className='btn'>logout</button>:<button className='btn'><Link to='/login' style={{color:'white'}}>login</Link></button>
+							}
+						</div>
+					</div>
 				</div>
 				<div className='home-img-holder'>
 					<img src={homeimg} className='homeimg' alt=''/>
@@ -54,5 +61,6 @@ export default function Home(){
 				</div>
 			</div>
 		</div>
+		</>
 		)
 }

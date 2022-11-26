@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
-import img from './../img/pic.jpeg';
+import { useNavigate,Link } from 'react-router-dom';
+import img from './../img/im.jpg';
 import fb from './../img/fblogo.png';
 import go from './../img/glogo.png';
 
@@ -73,20 +73,17 @@ export default function Login(){
 
 	return(
 		<div className='login'>
-			<div className='text'>
-				<div className='text-overlay'></div>
-				<img className='imgstyle' src={img} alt='Image by storyset on Freepik'/>
-			</div>
 			<div className='input-holder'>
-				<div>
+				<div className='lg-h-div'>
+				<Link to='/' style={{position:'absolute',top:'20px',left:'20px'}}>LOGO</Link>
 					<div className='welcome'>
-						<h3>Welcome !</h3>
-						<span>Not a member? <a style={{cursor:'pointer'}}>Register</a></span>
+						<h2>Welcome !</h2>
+						<span>Not a member? <Link to='#'>Register</Link></span>
 					</div>
 					<form onSubmit={submit}>
 
 					<div className='inputDiv'>
-						<div><label><b>Username</b></label></div>
+						<div><label>Username</label></div>
 						<input 
 							type='text' 
 							value={user.username}
@@ -98,13 +95,13 @@ export default function Login(){
 					
 
 					<div className='inputDiv'>
-						<div><label><b>Password</b></label><a style={{float:'right',cursor:'pointer'}}>forget password</a></div>
+						<div><label>Password</label><Link to='#'>forget password</Link></div>
 						
 						<input 
 							type='password'
 							value={user.password} 
 							name='password'
-							placeholder='password'
+							placeholder='Your password'
 							onChange={handleChange}
 						/>
 					</div>
@@ -115,16 +112,20 @@ export default function Login(){
 						<div className='separator'>or login with</div>
 						<div className='sm-holder'>
 							<button className='sm'>
-								<img className='logostyle' src={fb} alt='Image by storyset on Freepik'/>
+								<img className='logostylef' src={fb} alt='Image by storyset on Freepik'/>
 									Facebook
 							</button>
 							<button className='sm'>
-								<img className='logostyle' src={go} alt='Image by storyset on Freepik'/>
+								<img className='logostyleg' src={go} alt='Image by storyset on Freepik'/>
 								Google
 							</button>
 						</div>
 					</form>
 				</div>
+			</div>
+			<div className='text'>
+				<div className='text-overlay'></div>
+				<img className='imgstyle' src={img} alt='Image by storyset on Freepik'/>
 			</div>
 		</div>
 		)

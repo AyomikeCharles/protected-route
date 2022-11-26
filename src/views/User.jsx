@@ -1,4 +1,5 @@
 import userimg from './../img/user.jpeg';
+import Nav from './Nav';
 export default function User(){
 	let user;
 	try{
@@ -11,6 +12,8 @@ export default function User(){
 		console.log(user)
 
 	return(
+		<>
+		<Nav/>
 		<div className='dashboard'>
 			<div className='user-info'>
 				<h2>{user.username} Dashbord</h2>
@@ -18,5 +21,6 @@ export default function User(){
 				<img className='userimg' src={userimg} alt=''/>
 			</div>
 		</div>
+		</>
 		)
 }
